@@ -1,1 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./assets/javascript/game.js"></script>
+    <title>game</title>
+</head>
+
+<body>
+    <h1>Guess what letter I'm thinking of</h1>
+    <div span="userguess">
+        <p>
+
+            Wins: (# of times the user has guessed the letter correctly)
+            <p> <span id="win">__</p>
+
+            Losses: (# of times the user has failed to guess the letter correctly after exhausting all guesses) <p <p>
+                <span id="loss">__</p>
+
+            Guesses Left: (# of guesses left. This will update
+            <p> <span id="guessleft">__</p>
+
+            Your Guesses So Far: (the specific letters that the user typed. Display these until the user either wins or
+            loses.)
+            <p> <span id="guessnow">__</p>
+            <h2></h2><span id="user-text"><strong>TYPE HERE</strong></span></h2>
+
+
+
+            _ _ _ _ _
+        </p>
+
+
+        Your Guesses So Far: (the specific letters that the user typed. Display these until the user either wins or
+        loses.)
+
+        When the player wins, increase the Wins counter and start the game over again (without refreshing the page).
+
+        When the player loses, increase the Losses counter and restart the game without a page refresh (just like
+        when the user wins).
+        </p>
+        </p>
+    </div>
+
+    <script type="text/javascript">
+
+
+        // var userguess = document.getElementById("userguess");
+        var countries = ["spain", "croatia", "fiji", "guam"]
+        //use math random  want a number between 0-3 so... computer is choosing country 
+        // for user to guess // // returns a random integer from 0 to 4
+
+        var computerchoice = countries[Math.floor(Math.random() * countries.length)];
+        // max-min+1 -->  3-0+1 = 4
+        /// the index the computer choices
+        /// count the letters in the coumputer choice
+        var countryname = computerchoice.length;
+        /// visualize the blank slots ( need review)
+        var blankanswer = [];
+        for (var i = 0; i < computerchoice.length; i++){
+            blankanswer[i] = "_";
+        }
+        var lettersRemain = computerchoice.length;
+
+
+        var userText = document.getElementById("user-text");
+        document.onkeyup = function (event) {
+            userText.textContent = event.key;
+            
+
+            for (var i = 0; i < countries.length; i++)
+                if (computerchoice === "spain") {
+                    return;
+                    if (computerchoice === "croatia") {
+                        
+                    }
+           
+                };
+
+        }
+        for (var i = 0; i < countryname.length; i++)
+            if (computerchoice === "spain") {
+                console.log(" The country has letters ");
+                if (s = [0]) {
+                    console.log("s")
+
+                }
+            } else if (computerchoice === "croatia") {
+                console.log("okay");
+            }
+            else if (computerchoice === "fiji") {
+                console.log("hmmm");
+            }
+            else if (computerchoice === "guam") {
+                console.log("jjjj");
+            }
+
+        //       if( var str = computerchoice);
+        //var res = str.split("");
+
+
+        document.getElementById("win").innerHTML = computerchoice;
+        ///display __ for number of wins
+        //if () {
+
+        //}
+        document.getElementById("loss").innerHTML = Math.floor(Math.random() * 4);
+        ///display __ for number of 
+        document.getElementById("guessleft").innerHTML = Math.floor(Math.random() * 4);
+        ///display __ for number of 
+        document.getElementById("guessnow").innerHTML = Math.floor(Math.random() * 4);
+
+
+
+
+
+
+    </script>
+
+
+
+    userInput = userInput.toLowerCase();
+    if (userInput === 'rock' || userInput === 'paper' || 'scissors') {
+    return userInput;
+    } else {
+    console.log('Sorry that is not a valid choice!');
+    }
+    };
+    function getComputerChoice() {
+    let randomNumber = (Math.floor(Math.random() * 3))
+    switch (randomNumber) {
+    case 0:
+    return 'rock';
+    case 1:
+    return 'paper';
+    case 2:
+    return 'scissors';
+    }
+    }
+    function determineWinner (userChoice, computerChoice) {
+    if (userChoice === computerChoice) {
+    return 'Game is a tie!';
+    }
+    if (userChoice === 'rock') {
+    if (computerChoice === 'scissors') {
+    return 'You win!';
+    } else {
+    return 'The computer wins!';
+    }
+    }
+    if (userChoice === 'paper') {
+    if (computerChoice === 'scissors') {
+    return 'The computer wins!';
+    } else {
+    return 'You win!';
+    }
+    }
+    if (userChoice === 'scissors') {
+    if (computerChoice === 'rock') {
+    return 'The computer wins!'
+    } else {
+    return 'You win!';
+    }
+    }
+    }
+    const playGame = () => {
+    const userChoice =
+    getUserChoice('rock');
+    const computerChoice =
+    getComputerChoice();
+    console.log('You threw: ' + userChoice);
+    console.log('Computer threw: ' + computerChoice)
+    console.log(determineWinner(userChoice, computerChoice));
+    }

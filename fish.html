@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./assets/javascript/game.js"></script>
+    <title>game</title>
+</head>
+
+<body>
+    <h1>Guess what letter I'm thinking of</h1>
+    <div span="userguess">
+        <p> # of Wins:<p> <span id="win">__</p>
+
+            <p> # of Losses: <p> <span id="loss">__</p>
+
+            Guesses Left: (# of guesses left. This will update
+            <p> <span id="guessleft">__</p>
+
+            Your Guesses So Far: (the specific letters that the user typed. Display these until the user either wins or
+            loses.)
+            <p> <span id="guessnow">__</p>
+            <h2></h2><span id="user-text"><strong>TYPE HERE</strong></span></h2>
+
+
+
+            _ _ _ _ _
+        </p>
+
+
+        </p>
+        </p>
+    </div>
+
+    <script type="text/javascript">
+
+        <script>
+         Create an array of words
+            var words = ["javascript", "monkey", "amazing","pancake"];
+         Pick a random word
+            var word = words[Math.floor(Math.random() * words.length)];
+            // Set up the answer array
+            var answerArray = [];
+ for (var i = 0; i < word.length; i++) {
+                answerArray[i] = "_";
+            }
+            var remainingLetters = word.length;
+            // The game loop
+ while (remainingLetters > 0) {
+                // Show the player their progress
+                alert(answerArray.join(" "));
+            // Get a guess from the player
+            var guess = prompt("Guess a letter, or click Cancel to stop 
+           playing.");
+ if (guess === null) {
+ // Exit the game loop
+ break;
+ } else if (guess.length !== 1) {
+                alert("Please enter a single letter.");
+            } else {
+ // Update the game state with the guess
+ for (var j = 0; j < word.length; j++) {
+ if (word[j] === guess) {
+                answerArray[j] = guess;
+ remainingLetters--;
+                       }
+                       }
+                       }
+                   
+                       // The end of the game loop
+                       }
+                       // Show the answer and congratulate the player
+                       alert(answerArray.join(" "));
+                       alert("Good job! The answer was " + word);
+    </script>
+
+
+
