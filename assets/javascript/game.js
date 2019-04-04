@@ -9,7 +9,7 @@ var chances = 10; //numbe of chances
 var lettersRemain = computerchoice.length;  //remaining letters
 var blankAnswer = []; // slots for a randomized anwer
 var userwrongguesses = []; // slot for guessed letters 
-var correctguess = [];
+var correctguess = computerchoice.split([]);
 var chances = 10
 /// user press any letter to find computer choice BREAK  
 /// computerchoice  dispalys the number at appropriate  blank space
@@ -25,12 +25,13 @@ document.onkeyup = function (event) {
 
   }
   for (var j = 0; j < computerchoice.length; j++)   // loops all the letters
-    if (computerchoice.charAt(i) === userText.charAt([i])) {
-      blankAnswer += " ";
-    } else {
-      blankAnswer += "_";
-    }
-    console.log[i]; 
+    if (correctguess ===  userText) {
+      console.log(correctguess)}
+    //   blankAnsweruser.push(" ");
+    // } else {
+    //   blankAnswer += "_";
+    // }
+    // console.log[j]; 
   // lettersRemain--;
 
   //var lettermatch = computerchoice.charAt(i < computerchoice.length);
@@ -113,6 +114,4 @@ document.onkeyup = function (event) {
 
     // if (guessesLeft === -1) {
     //   alert("You Loose!");
-  }
-
-}
+  }} 
