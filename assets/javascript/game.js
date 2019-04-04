@@ -1,25 +1,28 @@
 var wordtoguess = document.getElementById("wordtoguess");
 
 var countries = ["spain", "croatia", "fiji", "guam"];
+
+
 ///////-------------chooseing a letter-------------------
-/// user press any letter to find computer choice BREAK       
+//chooseing a random word
 var computerchoice = countries[Math.floor(Math.random() * countries.length)];
-//// if its a letter from the computer choice
-/// computer dispalys the number at appropriate  blank space
-var chances = 5 ;
-var lettersRemain = computerchoice.length;
+
+var chances = 5; //numbe rof chances
+var lettersRemain += computerchoice.length;
 var blankAnswer = [];
 var userwrongguesses = [];
 var correctguess = [];
 
-for (var i = 0; i < computerchoice.length; i++) {
-  blankAnswer.push("_"); // insert/push blank space for eash character
-wordtoguess.textContent = blankAnswer.join(" ");
+/// user press any letter to find computer choice BREAK  
 
-// 
-if (userText === computerchoice.charAt([i])) { 
-correctguess.push(" HELLO");
-}
+/// computerchoice  dispalys the number at appropriate  blank space
+for (var i = 0; i < computerchoice.length; i++) {
+  blankAnswer.push("_"); //push( adds on) blank space for each character
+  wordtoguess.textContent = blankAnswer.join(" ");// add space instead of commas  betweeen letters
+
+  if (userText === computerchoice.charAt([i])) {
+    correctguess.push(" HELLO");
+  }
 }
 
 
@@ -27,15 +30,15 @@ correctguess.push(" HELLO");
 var userText = document.getElementById("user-text");
 document.onkeyup = function (event) {
   userwrongguesses.push(event.key);
-    userText.textContent = userwrongguesses;
+  userText.textContent = userwrongguesses;
 
 
-for (var j = 0; j < computerchoice.length; j++)
-  if (computerchoice[j] === userText) {
+  for (var j = 0; j < computerchoice.length; j++)
+    if (computerchoice[j] === userText) {
       blankAnswer[j] = userText;
       lettersRemain--;
       console.log(j);
-  }
+    }
 }
 
 
