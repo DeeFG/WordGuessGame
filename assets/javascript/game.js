@@ -13,6 +13,7 @@ var lettersRemain = computerchoice.length;  //remaining letters
 var blankAnswer = []; // slots for a randomized anwer
 var userwrongguesses = []; // slot for guessed letters 
 var correctguess = [];
+var lettermatch = computerchoice.charAt(i++);
 
 /// user press any letter to find computer choice BREAK  
 
@@ -22,25 +23,32 @@ for (var i = 0; i < computerchoice.length; i++) {
   wordtoguess.textContent = blankAnswer.join(" ");// add space instead of commas  betweeen blank dashes
 }
 
+
 var userText = document.getElementById("user-text"); ///when user press key
 document.onkeyup = function (event) {
   userwrongguesses.push(event.key);     //the wrong anwer is logged on top like
   userText.textContent = userwrongguesses.join(" "); // linking usertext input to the line where wrong guess will go 
 }
-   
-    if (computerchoice.indexOf(userText) != -1){ // if the character is found
+
+{ // if the character is found
   for (var j = 0; j < computerchoice.length; j++) // loops all the letters
-    if (computerchoice[j] === userText) { 
+    if (computerchoice[j] === userText) {
       blankAnswer[j] = computerchoice[i];
-      lettersRemain--;}
+      lettersRemain--;
+
+      if (lettermatch === [j] || lettermatch === ["/"]) {
+        blankAnswer += lettermatch;
+      } else {
+        blankAnswer += "_";
+      }
+
     }
-        else {
-          console.log("NOPE");
-        }
+}
 
-      
 
-   
+
+
+
 
 
 // expected output: "The character at index 4 is q"
