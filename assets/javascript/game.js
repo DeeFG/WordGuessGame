@@ -1,8 +1,5 @@
 
-
 var wordtoguess = document.getElementById("wordtoguess");
-
-
 /// randomized word
 var words = ["spain", "croatia", "germany", "guam"];
 // array of differdent words
@@ -13,19 +10,13 @@ var lettersRemain = computerchoice.length;  //remaining letters
 var blankAnswer = []; // slots for a randomized anwer
 var userwrongguesses = []; // slot for guessed letters 
 var correctguess = [];
-var lettermatch = computerchoice.charAt(i < computerchoice.length);
 var chances = 10
 /// user press any letter to find computer choice BREAK  
-
 /// computerchoice  dispalys the number at appropriate  blank space
 for (var i = 0; i < computerchoice.length; i++) {
   blankAnswer.push("_"); //push( adds on) blank sdashes for each character
   wordtoguess.textContent = blankAnswer.join(" ");// add space instead of commas  betweeen blank dashes
 }
-
-
-
-
 var userText = document.getElementById("user-text"); ///when user press key
 document.onkeyup = function (event) {
   if (event.keyCode >= 65 && event.keyCode <= 90) {
@@ -33,29 +24,21 @@ document.onkeyup = function (event) {
     userText.textContent = userwrongguesses.join(" "); // linking usertext input to the line where wrong guesses will go 
 
   }
-  for (var i = 0; i < computerchoice.length; i++)   // loops all the letters
-
-    if (computerchoice.charAt(i) === " ") {
+  for (var j = 0; j < computerchoice.length; j++)   // loops all the letters
+    if (computerchoice.charAt(i) === userText.charAt([i])) {
       blankAnswer += " ";
     } else {
       blankAnswer += "_";
     }
+    console.log[i]; 
   // lettersRemain--;
 
-
-
-
-  //     if (lettermatch === [j] || lettermatch === ["/"]) {
-  //       blankAnswer += lettermatch;
-  //     } else {
-  //       blankAnswer += "_";
-  //     }
-
-
-  // if (event = lettermatch) {
-  //   correctguess.push(lettermatch);
-  //   wordtoguess.textContent = blankAnswer.join(" ")
-  //   console.log(lettermatch);
+  //var lettermatch = computerchoice.charAt(i < computerchoice.length);
+  // var lettermatch = computerchoice.indexOf(userText)
+  // if (lettermatch != 1) {
+  //   computerchoice[lettermatch] = userText;
+  //   lettermatch = computerchoice.indexOf(userText,lettermatch)
+  //   return;
   // }
 
 
