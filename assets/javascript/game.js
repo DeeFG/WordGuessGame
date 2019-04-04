@@ -26,24 +26,21 @@ var userText = document.getElementById("user-text"); ///when user press key
 document.onkeyup = function (event) {
   userwrongguesses.push(event.key);     //the wrong anwer is logged on top like
   userText.textContent = userwrongguesses.join(" "); // linking usertext input to the line where wrong guess will go 
-
-  document.omkeyup = function (event) {
-    var same = str.match([])
-    console.log(same)
-    // if (match === userText){
-    // match.push(event.key);
-    // userText.textContent = blankAnswer.push("_");
-    // }
-  }
-
-  for (var j = 0; j < computerchoice.length; j++)
-    if (computerchoice[j] === userText) { 
-      blankAnswer[j] = userText;
-      lettersRemain--;
-      console.log([j]);
-    }
-    
 }
+   
+    if (computerchoice.indexOf(userText) != -1){ // if the character is found
+  for (var j = 0; j < computerchoice.length; j++) // loops all the letters
+    if (computerchoice[j] === userText) { 
+      blankAnswer[j] = computerchoice[i];
+      lettersRemain--;}
+    }
+        else {
+          console.log("NOPE");
+        }
+
+      
+
+   
 
 
 // expected output: "The character at index 4 is q"
@@ -92,6 +89,5 @@ document.onkeyup = function (event) {
 //     console.log("correct");
 //   }
 
-//         /////----------- SCORE CALCULATIONS------------------------------------
-
-
+//         /////----------- SCORE CALCULATIONS-------------------------------
+//
