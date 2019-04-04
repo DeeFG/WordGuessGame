@@ -1,44 +1,48 @@
+
+
 var wordtoguess = document.getElementById("wordtoguess");
 
-var countries = ["spain", "croatia", "fiji", "guam"];
 
-
-///////-------------chooseing a letter-------------------
-//chooseing a random word
+/// randomized word
+var countries = ["spain", "croatia", "germany", "guam"];
+// array of differdent words
 var computerchoice = countries[Math.floor(Math.random() * countries.length)];
-
-var chances = 5; //numbe rof chances
-var lettersRemain += computerchoice.length;
-var blankAnswer = [];
-var userwrongguesses = [];
+///space where word is guesses
+var chances = 5; //numbe rof chances 
+var lettersRemain = computerchoice.length;  //remaining letters
+var blankAnswer = []; // slots for a randomized anwer
+var userwrongguesses = []; // slot for guessed letters 
 var correctguess = [];
 
 /// user press any letter to find computer choice BREAK  
 
 /// computerchoice  dispalys the number at appropriate  blank space
 for (var i = 0; i < computerchoice.length; i++) {
-  blankAnswer.push("_"); //push( adds on) blank space for each character
-  wordtoguess.textContent = blankAnswer.join(" ");// add space instead of commas  betweeen letters
-
-  if (userText === computerchoice.charAt([i])) {
-    correctguess.push(" HELLO");
-  }
+  blankAnswer.push("_"); //push( adds on) blank sdashes for each character
+  wordtoguess.textContent = blankAnswer.join(" ");// add space instead of commas  betweeen blank dashes
 }
 
-
-
-var userText = document.getElementById("user-text");
+var userText = document.getElementById("user-text"); ///when user press key
 document.onkeyup = function (event) {
-  userwrongguesses.push(event.key);
-  userText.textContent = userwrongguesses;
+  userwrongguesses.push(event.key);     //the wrong anwer is logged on top like
+  userText.textContent = userwrongguesses.join(" "); // linking usertext input to the line where wrong guess will go 
 
+  document.omkeyup = function (event) {
+    var same = str.match([])
+    console.log(same)
+    // if (match === userText){
+    // match.push(event.key);
+    // userText.textContent = blankAnswer.push("_");
+    // }
+  }
 
   for (var j = 0; j < computerchoice.length; j++)
-    if (computerchoice[j] === userText) {
+    if (computerchoice[j] === userText) { 
       blankAnswer[j] = userText;
       lettersRemain--;
-      console.log(j);
+      console.log([j]);
     }
+    
 }
 
 
