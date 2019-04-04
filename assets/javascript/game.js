@@ -8,7 +8,7 @@ var countries = ["spain", "croatia", "germany", "guam"];
 // array of differdent words
 var computerchoice = countries[Math.floor(Math.random() * countries.length)];
 ///space where word is guesses
-var chances = 5; //numbe rof chances 
+var chances = 10; //numbe of chances 
 var lettersRemain = computerchoice.length;  //remaining letters
 var blankAnswer = []; // slots for a randomized anwer
 var userwrongguesses = []; // slot for guessed letters 
@@ -28,9 +28,13 @@ var userText = document.getElementById("user-text"); ///when user press key
 document.onkeyup = function (event) {
   userwrongguesses.push(event.key);     //the wrong anwer is logged on top like
   userText.textContent = userwrongguesses.join(" "); // linking usertext input to the line where wrong guess will go 
+
 }
 
-{ // if the character is found
+
+
+//  the character is found
+
   for (var j = 0; j < computerchoice.length; j++) // loops all the letters
     if (computerchoice[j] === userText) {
       blankAnswer[j] = computerchoice[i];
@@ -43,11 +47,29 @@ document.onkeyup = function (event) {
       }
 
     }
-}
 
 
 
 
+
+// document.onkeyup = function (event) {
+//   var event = event || window.event,
+//     charCode = event.keyCode || event.which,
+//     guessleft = String.fromCharCode(charCode);
+
+//   if (computerchoice.indexOf(charCode) > -1) {
+//     alert("Your guess is correct.")
+//   } else {
+//     alert("Your guess is wrong.")
+//   }
+
+//   document.getElementById("guessleft").innerHTML += guessleft;
+//   document.getElementById("chances").innerHTML = chances;
+//   chances--;
+//   if (chances === -1) {
+//     alert("You Loose!");
+//   }
+// }
 
 
 
