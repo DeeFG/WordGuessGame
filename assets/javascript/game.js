@@ -4,9 +4,9 @@ var wordtoguess = document.getElementById("wordtoguess");
 
 
 /// randomized word
-var countries = ["spain", "croatia", "germany", "guam"];
+var words = ["spain", "croatia", "germany", "guam"];
 // array of differdent words
-var computerchoice = countries[Math.floor(Math.random() * countries.length)];
+var computerchoice = words[Math.floor(Math.random() * words.length)];
 ///space where word is guesses
 var chances = 10; //numbe of chances 
 var lettersRemain = computerchoice.length;  //remaining letters
@@ -24,6 +24,8 @@ for (var i = 0; i < computerchoice.length; i++) {
 }
 
 
+
+
 var userText = document.getElementById("user-text"); ///when user press key
 document.onkeyup = function (event) {
   if (event.keyCode >= 65 && event.keyCode <= 90) {
@@ -31,24 +33,30 @@ document.onkeyup = function (event) {
     userText.textContent = userwrongguesses.join(" "); // linking usertext input to the line where wrong guesses will go 
 
   }
-  for (var j = 0; j < computerchoice.length; j++) // loops all the letters
-    if (computerchoice[j] === userText) {
-      blankAnswer[j] = userText;
-      lettersRemain--;
-      userText.textContent = blankAnswer.join("");
+  for (var i = 0; i < computerchoice.length; i++)   // loops all the letters
 
-      if (lettermatch === [j] || lettermatch === ["/"]) {
-        blankAnswer += lettermatch;
-      } else {
-        blankAnswer += "_";
-      }
+    if (computerchoice.charAt(i) === " ") {
+      blankAnswer += " ";
+    } else {
+      blankAnswer += "_";
     }
+  // lettersRemain--;
 
-  if (event = lettermatch) {
-    correctguess.push(lettermatch);
-    wordtoguess.textContent = blankAnswer.join(" ")
-    console.log(lettermatch);
-  }
+
+
+
+  //     if (lettermatch === [j] || lettermatch === ["/"]) {
+  //       blankAnswer += lettermatch;
+  //     } else {
+  //       blankAnswer += "_";
+  //     }
+
+
+  // if (event = lettermatch) {
+  //   correctguess.push(lettermatch);
+  //   wordtoguess.textContent = blankAnswer.join(" ")
+  //   console.log(lettermatch);
+  // }
 
 
 
@@ -87,7 +95,7 @@ document.onkeyup = function (event) {
 
 
 
-  // for (var i = 0; i < countries.length; i++)
+  // for (var i = 0; i < words.length; i++)
   //   if (computerchoice || "spain" || "croatia" || "fiji" || "guam") {
   //     console.log(blankanswer[i]);
   //   };
@@ -123,4 +131,5 @@ document.onkeyup = function (event) {
     // if (guessesLeft === -1) {
     //   alert("You Loose!");
   }
+
 }
