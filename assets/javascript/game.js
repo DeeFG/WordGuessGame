@@ -9,109 +9,152 @@ var chances = 10; //numbe of chances
 var lettersRemain = computerchoice.length;  //remaining letters
 var blankAnswer = []; // slots for a randomized anwer
 var userwrongguesses = []; // slot for guessed letters 
-var correctguess = computerchoice.split([]);
-var chances = 10
+var choicearray = computerchoice.split([]);
+var userText; //user guess
+var chances = 7; //counts correct letters
+var losses = 0;
+var wins = 0;
+
+//Click button to start game
+
+
 /// user press any letter to find computer choice BREAK  
 /// computerchoice  dispalys the number at appropriate  blank space
 for (var i = 0; i < computerchoice.length; i++) {
   blankAnswer.push("_"); //push( adds on) blank sdashes for each character
   wordtoguess.textContent = blankAnswer.join(" ");// add space instead of commas  betweeen blank dashes
 }
+function ABC() {
+  var ind = randIndex(words.length);
+  choicearray = words[ind].toLowerCase();
+
+
+}
+
+
+// function initialword() {
+  
+}
 var userText = document.getElementById("user-text"); ///when user press key
 document.onkeyup = function (event) {
-  if (event.keyCode >= 65 && event.keyCode <= 90) {
+  if (event.keyCode >= 65 && event.keyCode <= 90) { /// code to use letters only 
     userwrongguesses.push(event.key);     //the wrong anwer is logged on top like
     userText.textContent = userwrongguesses.join(" "); // linking usertext input to the line where wrong guesses will go 
 
-  }
-  for (var j = 0; j < computerchoice.length; j++)   // loops all the letters
-    if (correctguess ===  userText) {
-      console.log(correctguess)}
-    //   blankAnsweruser.push(" ");
+
+  for (var j = 0; j < choicearray.length; j++) {  // loops all the letters
+    // if (choicearray[j] === " "){
+    //   blankAnswer[j] = "_";
     // } else {
-    //   blankAnswer += "_";
+    //   blankAnswer[j] = "_";
+    //   lettersRemain++;
+      // if (choicearray.includes(event.key)){
+      //   blankAnswer.push(even.key)
+      if(choicearray[j]=== event.key){ blankAnswer[j]= event.key}
+      };
+    }  
+  }
+}
+  }
+    // event.key is in choicearray
+    // update blankarray
+   
+
+
+  
+
+
+
+
+// push user anwer to black spot
+// repalce user anwer and keep other dashes
+
+
+
+
+
+
+
+
+
+
+    //var lettermatch = computerchoice.charAt(i < computerchoice.length);
+    // var lettermatch = computerchoice.indexOf(userText)
+    // if (lettermatch != 1) {
+    //   computerchoice[lettermatch] = userText;
+    //   lettermatch = computerchoice.indexOf(userText,lettermatch)
+    //   return;
     // }
-    // console.log[j]; 
-  // lettersRemain--;
-
-  //var lettermatch = computerchoice.charAt(i < computerchoice.length);
-  // var lettermatch = computerchoice.indexOf(userText)
-  // if (lettermatch != 1) {
-  //   computerchoice[lettermatch] = userText;
-  //   lettermatch = computerchoice.indexOf(userText,lettermatch)
-  //   return;
-  // }
 
 
 
-  // expected output: "The character at index 4 is q"
-  ///////-------------chooseing a letter-------------------
-  /// computer decided if it is a letter from the computer choice length
+    // expected output: "The character at index 4 is q"
+    ///////-------------chooseing a letter-------------------
+    /// computer decided if it is a letter from the computer choice length
 
 
-  ///  else  display letter on screen and have it stay 
+    ///  else  display letter on screen and have it stay 
 
 
-  ///---------------- is guess right or wrong -------------
-  //if guess is wrongy alert() or document.write "GUESS AGAIN"
-  //when GUESS AGAIN appear subtract -1 from starting chances;
+    ///---------------- is guess right or wrong -------------
+    //if guess is wrongy alert() or document.write "GUESS AGAIN"
+    //when GUESS AGAIN appear subtract -1 from starting chances;
 
-  //----------------win or loose---------------------------
-  // LOOP until last letter is found by userText
-  /// OR if  chances === 0
-  //if  last letter is found and chanced are >=1 
-  // DISPLAY " YOU WIN"
-  // add 1 point to winner sectionw hen display " you win" 
-  // if  chances === < 1
-  //add 1 point to losses  display "YOU LOOSE TRY ANOTHER WORD"
-  // when 1 point added to WIN || LOSS  generate a new  computer choice
-
-
-  // /// the index the computer choices
-  // /// count the letters in the coumputer choice
-  // var countryname = computerchoice.length;
-  // /// visualize the blank slots (--------------need review--------------)
+    //----------------win or loose---------------------------
+    // LOOP until last letter is found by userText
+    /// OR if  chances === 0
+    //if  last letter is found and chanced are >=1 
+    // DISPLAY " YOU WIN"
+    // add 1 point to winner sectionw hen display " you win" 
+    // if  chances === < 1
+    //add 1 point to losses  display "YOU LOOSE TRY ANOTHER WORD"
+    // when 1 point added to WIN || LOSS  generate a new  computer choice
 
 
-
-  // /// (--------------need review--------------)
-  // /// user select key
+    // /// the index the computer choices
+    // /// count the letters in the coumputer choice
+    // var countryname = computerchoice.length;
+    // /// visualize the blank slots (--------------need review--------------)
 
 
 
-  // for (var i = 0; i < words.length; i++)
-  //   if (computerchoice || "spain" || "croatia" || "fiji" || "guam") {
-  //     console.log(blankanswer[i]);
-  //   };
-
-  // ////////// selecting a key in dashes
-  // for (var i = 0; i < countryname.length; i++)
-  //   if (computerchoice === "spain" && userText === "s") {
-  //     console.log("correct");
-  //   }
-
-  //         /////----------- SCORE CALCULATIONS-------------------------------
-  //var guessesLeft = 9;
-
-  document.onkeypress = function (keyPressed) {
-    var keyPressed = keyPressed || window.event,
-      charCode = keyPressed.keyCode || keyPressed.which,
-      chances = String.fromCharCode(charCode);
-
-    // var userGuess = prompt("What word do you guess?");
-    // var userGuess = words.split('');
-    // var userGuess
-    // if (words.indexOf(userGuess) > -1) {
-    // 	alert("Your guess is correct.")
-    // }else {
-    // // 	alert("Your guess is wrong.")
-    // // }
-
-    // document.getElementById("chances").innerHTML += chances;
+    // /// (--------------need review--------------)
+    // /// user select key
 
 
-    // guessesLeft--;
 
-    // if (guessesLeft === -1) {
-    //   alert("You Loose!");
-  }} 
+    // for (var i = 0; i < words.length; i++)
+    //   if (computerchoice || "spain" || "croatia" || "fiji" || "guam") {
+    //     console.log(blankanswer[i]);
+    //   };
+
+    // ////////// selecting a key in dashes
+    // for (var i = 0; i < countryname.length; i++)
+    //   if (computerchoice === "spain" && userText === "s") {
+    //     console.log("correct");
+    //   }
+
+    //         /////----------- SCORE CALCULATIONS-------------------------------
+    //var guessesLeft = 9;
+
+    // document.onkeypress = function (keyPressed) {
+    //   var keyPressed = keyPressed || window.event,
+    //     charCode = keyPressed.keyCode || keyPressed.which,
+    //     chances = String.fromCharCode(charCode);
+
+      // var userGuess = prompt("What word do you guess?");
+      // var userGuess = words.split('');
+      // var userGuess
+      // if (words.indexOf(userGuess) > -1) {
+      // 	alert("Your guess is correct.")
+      // }else {
+      // // 	alert("Your guess is wrong.")
+      // // }
+
+      // document.getElementById("chances").innerHTML += chances;
+
+
+      // guessesLeft--;
+
+      // if (guessesLeft === -1) {
+      //   alert("You Loose!");
