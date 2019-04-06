@@ -15,53 +15,38 @@ var chances = 7; //counts correct letters
 var losses = 0;
 var wins = 0;
 
-//Click button to start game
-
-
-/// user press any letter to find computer choice BREAK  
-/// computerchoice  dispalys the number at appropriate  blank space
 for (var i = 0; i < computerchoice.length; i++) {
   blankAnswer.push("_"); //push( adds on) blank sdashes for each character
   wordtoguess.textContent = blankAnswer.join(" ");// add space instead of commas  betweeen blank dashes
 }
-function ABC() {
-  var ind = randIndex(words.length);
-  choicearray = words[ind].toLowerCase();
 
-
-}
-
-
-// function initialword() {
-  
-}
 var userText = document.getElementById("user-text"); ///when user press key
 document.onkeyup = function (event) {
   if (event.keyCode >= 65 && event.keyCode <= 90) { /// code to use letters only 
     userwrongguesses.push(event.key);     //the wrong anwer is logged on top like
     userText.textContent = userwrongguesses.join(" "); // linking usertext input to the line where wrong guesses will go 
+    }
+    for (var i = 0; i < choicearray.length; i++) {  // loops all the letters
+      if (choicearray[i] === event.key)
+        blankAnswer[i] = choicearray[i];
+    }
 
-
-  for (var j = 0; j < choicearray.length; j++) {  // loops all the letters
-    // if (choicearray[j] === " "){
+    //   ){ }
+    // if ( === " "){
     //   blankAnswer[j] = "_";
     // } else {
     //   blankAnswer[j] = "_";
     //   lettersRemain++;
-      // if (choicearray.includes(event.key)){
-      //   blankAnswer.push(even.key)
-      if(choicearray[j]=== event.key){ blankAnswer[j]= event.key}
-      };
-    }  
-  }
-}
-  }
+
+
+  };
+
     // event.key is in choicearray
     // update blankarray
-   
 
 
-  
+
+
 
 
 
@@ -141,15 +126,6 @@ document.onkeyup = function (event) {
     //   var keyPressed = keyPressed || window.event,
     //     charCode = keyPressed.keyCode || keyPressed.which,
     //     chances = String.fromCharCode(charCode);
-
-      // var userGuess = prompt("What word do you guess?");
-      // var userGuess = words.split('');
-      // var userGuess
-      // if (words.indexOf(userGuess) > -1) {
-      // 	alert("Your guess is correct.")
-      // }else {
-      // // 	alert("Your guess is wrong.")
-      // // }
 
       // document.getElementById("chances").innerHTML += chances;
 
