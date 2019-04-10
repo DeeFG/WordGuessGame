@@ -7,24 +7,38 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    
    
     <title>game</title>
 </head>
 
-<body>
-    <h1>Guess what letter I'm thinking of</h1>
-    <div span="userguess">
+<body >
+        <div class="bg"></div>
+
+        <p class="py-5 text-center">This example creates a full page background image. Try to resize the browser window to see how it always will cover the full screen (when scrolled to top), and that it scales nicely on all screen sizes.</p>
+        
+    <center> <br><br><br><br><br>
+    <h1>Guess The Country</h1>
+    <div id="userguess"> <br><br><br><br><br><br>
         <p>
             <p id ="start"></p>
-            <h2><span type="text" id="user-text"><strong>usertext</strong></span></h2>
-            <h2><span type="text" id="wordtoguess"> </span></h2>
+            <h2><span type="text" id="user-text"><strong> GUESS A LETTER</strong></span></h2>
+            <h2 id="correctlett">     </h2>
+                <h2><span type="text" id="wordtoguess"> </span></h2>
+            
+                <p id="rightGuess"></p>
+                <p id ="wrongGuess"></p>
+                <p id ="guessesLeft"></p>
             <p>Wins: <span id="win"></p>
             <p>Losses: <span id="loss"></p>
             <p>Guesses Left: <span id="guessesLeft"></p>
-            <p> Chances: <span id="tries"></p>
+            <p> Chances: <span id="chances"></p>
                 <p><span id="correctguess"></span></p>
+                <br><br><br><br><br><br>
         </p>
+          
     </div>
+</center>
 
 <script src="./assets/javascript/game.js"></script>
 </body>
