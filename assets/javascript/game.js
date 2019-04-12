@@ -1,3 +1,4 @@
+
 var win = document.getElementById("win");
 var loss = document.getElementById("loss");
 var userText = document.getElementById("user-text");
@@ -224,6 +225,3 @@ document.onkeyup = function (event) {
     }
   }
 };
-
-
-
