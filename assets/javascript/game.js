@@ -178,6 +178,7 @@ var words = ["afghanistan",
   , "zambia"
   , "zimbabwe"];
 
+
 // array of differdent words
 var computerchoice = words[Math.floor(Math.random() * words.length)];
 ///space where word is guesses
@@ -188,7 +189,7 @@ var choicearray = computerchoice.split([]);
 
 var chances = 10; //counts correct letters
 var guessedletter = 0;
-var losses = 0;
+var loss = 0;
 var wins = 0;
 var match = false;
 chanceText.textContent = chances;
@@ -197,6 +198,7 @@ for (var i = 0; i < computerchoice.length; i++) {
   blankAnswer.push("_"); //push( adds on) blank sdashes for each character
   wordtoguess.textContent = blankAnswer.join(" ");// add space instead of commas  betweeen blank dashes  
   chances = 10;
+  
 }
 
 document.onkeyup = function (event) {
@@ -209,6 +211,8 @@ document.onkeyup = function (event) {
         blankAnswer[i] = choicearray[i];
         wordtoguess.textContent = blankAnswer.join(" ");
         match = true;
+        loss = 0;
+        wins =0;
 
       }
     }
@@ -218,6 +222,7 @@ document.onkeyup = function (event) {
       chanceText.textContent = chances;
     if (chances <= 0) { 
       alert("loose"); 
+      loss++;
     }
     if( !blankAnswer === choicearray){
       alert("WIN")
@@ -228,82 +233,82 @@ document.onkeyup = function (event) {
 
 
 // --------------------------------------
-var win = document.getElementById("win");
-var loss = document.getElementById("loss");
-var userText = document.getElementById("user-text");
-var wordtoguess = document.getElementById("wordtoguess");
-var chanceText = document.getElementById("chances");
-var computerchoice1 = document.getElementById("user-text");
+// var win = document.getElementById("win");
+// var loss = document.getElementById("loss");
+// var userText = document.getElementById("user-text");
+// var wordtoguess = document.getElementById("wordtoguess");
+// var chanceText = document.getElementById("chances");
+// var computerchoice1 = document.getElementById("user-text");
 
 
-/// randomized word
-var words = ["afghanistan",
+// /// randomized word
+// var words = ["afghanistan",
 
-    , "yemen"
-    , "zambia"
-    , "zimbabwe"];
+//     , "yemen"
+//     , "zambia"
+//     , "zimbabwe"];
 
-// array of differdent words
-var computerchoice = words[Math.floor(Math.random() * words.length)];
-///space where word is guesses
-var lettersRemain = computerchoice.length;  //remaining letters
-var blankAnswer = []; // slots for a randomized anwer
-var userwrongguesses = []; // slot for guessed letters 
-var choicearray = computerchoice.split([]);
-var usertextloop = [];
+// // array of differdent words
+// var computerchoice = words[Math.floor(Math.random() * words.length)];
+// ///space where word is guesses
+// var lettersRemain = computerchoice.length;  //remaining letters
+// var blankAnswer = []; // slots for a randomized anwer
+// var userwrongguesses = []; // slot for guessed letters 
+// var choicearray = computerchoice.split([]);
+// var usertextloop = [];
 
-var chances = 10; //counts correct letters
-var guessedletter = 0;
-var losses = 0;
-var wins = 0;
-var match = false;
-chanceText.textContent = chances;
+// var chances = 10; //counts correct letters
+// var guessedletter = 0;
+// var losses = 0;
+// var wins = 0;
+// var match = false;
+// chanceText.textContent = chances;
 
-for (var i = 0; i < computerchoice.length; i++) {
-    blankAnswer.push("_"); //push( adds on) blank sdashes for each character
-    wordtoguess.textContent = blankAnswer.join(" ");// add space instead of commas  betweeen blank dashes  
-    chances = 10;
-    if (chances <= 0) {
-        alert("loose");
-        blankAnswer.push(computerchoice[i]);
-    }
-    //   if (userText.textContent === wordtoguess.textContent) {
-    //     console.log(" STOP");}
+// for (var i = 0; i < computerchoice.length; i++) {
+//     blankAnswer.push("_"); //push( adds on) blank sdashes for each character
+//     wordtoguess.textContent = blankAnswer.join(" ");// add space instead of commas  betweeen blank dashes  
+//     chances = 10;
+//     if (chances <= 0) {
+//         alert("loose");
+//         blankAnswer.push(computerchoice[i]);
+//     }
+//     //   if (userText.textContent === wordtoguess.textContent) {
+//     //     console.log(" STOP");}
 
 
-    document.onkeyup = function (event) {
-        if (event.keyCode >= 65 && event.keyCode <= 90) { /// code to use letters only 
-            userwrongguesses.push(event.key);
-            userText.textContent = userwrongguesses.join(" "); // linking usertext input to the line where wrong guesses will go 
-            // }
-            for (var i = 0; i < choicearray.length; i++) {  // loops all the letters
-                if (choicearray[i] === event.key) {
-                    if(choicearray[i] == blankAnswer) {
-                        return false;
-                    }
-                    blankAnswer[i] = choicearray[i];
-                    wordtoguess.textContent = blankAnswer.join(" ");
-                    match = true;
+//     document.onkeyup = function (event) {
+//         if (event.keyCode >= 65 && event.keyCode <= 90) { /// code to use letters only 
+//             userwrongguesses.push(event.key);
+//             userText.textContent = userwrongguesses.join(" "); // linking usertext input to the line where wrong guesses will go 
+//             // }
+//             for (var i = 0; i < choicearray.length; i++) {  // loops all the letters
+//                 if (choicearray[i] === event.key) {
+//                     if(choicearray[i] == blankAnswer) {
+//                         return false;
+//                     }
+//                     blankAnswer[i] = choicearray[i];
+//                     wordtoguess.textContent = blankAnswer.join(" ");
+//                     match = true;
                     
-                }
-            }
-        }
+//                 }
+//             }
+//         }
 
-        if (!choicearray.includes(event.key)) {
-            chances--;
-            chanceText.textContent = chances;
+//         if (!choicearray.includes(event.key)) {
+//             chances--;
+//             chanceText.textContent = chances;
 
-            if (chances = 0) {
-                document.getElementById("msg").innerHTML = "Try again the aswer was";
-                document.getElementById("wordtoguess").innerHTML = computerchoice;
-               losses ++ ;
-            }
+//             if (chances = 0) {
+//                 document.getElementById("msg").innerHTML = "Try again the aswer was";
+//                 document.getElementById("wordtoguess").innerHTML = computerchoice;
+//                losses ++ ;
+//             }
 
-            // if (blankAnswer === choicearray) {
-            //     alert("WIN")
-            //     document.getElementById("msg").innerHTML = " YOU WIN";
-            // }
-        }
-    }
-};
+//             // if (blankAnswer === choicearray) {
+//             //     alert("WIN")
+//             //     document.getElementById("msg").innerHTML = " YOU WIN";
+//             // }
+//         }
+//     }
+// };
 
