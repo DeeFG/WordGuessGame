@@ -211,8 +211,6 @@ document.onkeyup = function (event) {
         blankAnswer[i] = choicearray[i];
         wordtoguess.textContent = blankAnswer.join(" ");
         match = true;
-        loss = 0;
-        wins =0;
 
       }
     }
