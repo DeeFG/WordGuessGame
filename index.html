@@ -11,23 +11,6 @@
     <title>Word Guess</title>
 </head>
 
-<body>
-
-
-    <div class="container">
-        <!DOCTYPE html>
-        <html lang="en">
-
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-
-
-            <title>game</title>
-        </head>
-
 
         <style>
             html {
@@ -36,7 +19,7 @@
                 background-position: center;
                 background-repeat: no-repeat;
                 color: #fff;
-                border: #000 50px solid;
+                border: #000 20px solid;
             }
 
             /* credited to codepen https://codepen.io/chonz0/pen/NGRbWj */
@@ -97,7 +80,7 @@
 
         <body>
             <br><br>
-            <div class="containers">
+     
                 <div class="row">
                     <div class="col s12">
                         <h1>
@@ -105,20 +88,25 @@
                             <div class="pane">O</div>
                             <div class="pane">R</div>
                             <div class="pane">D</div>
-                            <div class="pane">-</div>
+                            <div class="pane">_</div>
                             <div class="pane">G</div>
                             <div class="pane">U</div>
                             <div class="pane">E</div>
                             <div class="pane">S</div>
-                            <div class="pane">S</div>
+                            <div class="pane">S</div> <h1> Guess The Country</h1>  
                         </h1>
                     </div>
-                </div> <br><br><br><br>
+                </div> 
+                <br>
 
                 <div class="row">
-
+               
                     <div class="col s12">
-                        <h1> Guess The Country</h1>
+                        
+                          <span id="msg"></span>
+                    <span type="text" id="user-text"><strong>letter you have guessed</strong></span>
+                    <h2 id="correctlett"> </h2>
+                    <h2><span type="text" id="wordtoguess"> </span></h2>
                         <div class="pane"></div>
                         <div class="pane"></div>
                         <div class="pane"></div>
@@ -167,9 +155,9 @@
                     <div class="pane"><span id="chances">10
                     </div>
                 </div>
+<br><br>
 
-
-
+<!-- 
 
                 <div id="userguess"> <br><br><br><br>
                     <p>
@@ -187,16 +175,12 @@
                                 <p id="rightGuess"></p>
                                 <p id="wrongGuess"></p>
                                 <p id="guessesLeft"></p>
-                                <p>Wins: <span id="win"></p>
-                                <p>Losses: <span id="losses"></p>
-                                <p>Guesses Left: <span id="guessesLeft"></p>
-                                <p> Chances: <span id="chances"></p>
                                 <p><span id="correctguess"></span></p>
                                 <br><br><br><br><br><br>
                             </p>
 
                         </div>
-                </div>
+                </div> -->
 
 
                 <script src="H:\word guess\game.js"></script>
